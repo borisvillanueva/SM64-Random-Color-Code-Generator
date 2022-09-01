@@ -1,0 +1,5 @@
+1- Need to find out how to assign color to empty space
+2- need to create an empty Mario to assign all colors
+3- need to program button to random create color and assign.
+4- Need to convert the color to whatever format is needed and display on list
+5- Need to display new color on Mario empty
