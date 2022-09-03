@@ -1,13 +1,29 @@
 
-
-function randomColors() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+const setBg = () => {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+    color.innerHTML = "#" + randomColor;
+    return '#' + randomColor;
 }
+
+genNew.addEventListener("click", setBg);
+setBg();
+
+
+// function randomColors() {
+//     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+// }
 
 //overalls
 function genDifColorOveralls() {
-    $("#overalls").css("background-color", randomColors());
+
+    $("#overalls").css("background-color", setBg);
+
+    // $("#color").css("background-color", setBg);
+
 }
+
 
 //hat
 function genDifColorHat() {
@@ -33,3 +49,4 @@ function genDifColorGloves() {
 function genDifColorShoes() {
     $("#shoes").css("background-color", randomColors());
 }
+

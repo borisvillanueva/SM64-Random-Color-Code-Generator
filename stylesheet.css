@@ -23,7 +23,7 @@ x-model {
 
 body {
     margin: 0;
-    background-image: url("img/zbh1Ku.png");
+    background-image: url("img/wp3621394.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -111,7 +111,7 @@ textarea {
     padding: 10px;
     margin: 10px;
     /* width: 35%; */
-    height: 380px;
+    height: 400px;
     font-family: "Roboto";
 
 }
@@ -348,7 +348,7 @@ textarea {
 }
 
 .hv64 {
-    width: 20%;
+    width: 10%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -356,4 +356,15 @@ textarea {
 
 #hair {
     width: 110px;
+}
+
+#color {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: monospace;
+    background: white;
+    padding: 1rem 2rem;
+    text-align: center;
 }
