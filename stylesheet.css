@@ -358,13 +358,13 @@ textarea {
     width: 110px;
 }
 
-#color {
+
+.testo {
     display: block;
-    padding: 1rem;
     font-size: 1rem;
     font-weight: normal;
     font-family: monospace;
     background: white;
-    padding: 1rem 2rem;
+    padding: 5px;
     text-align: center;
 }

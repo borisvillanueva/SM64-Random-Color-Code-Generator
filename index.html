@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramdon HV64 Generator</title>
+    <title>Random HV64 Generator</title>
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Our local JS, as well as jQuery -->
@@ -36,21 +36,21 @@
             <div class="column">
                 <div class="blob">
                     <center class="hash">
-                        <span class="testo" id="color"></span>
                         <h2>Overalls</h2>
-
-                        <button class="button2" type="button" id="chOver" onclick="genDifColorOveralls()"><span>Change
+                        <button class=" button2" type="button" id="chOver" onclick="genDifColorOveralls()"><span>Change
                                 Mario</span></button>
                         <img class="mario testo" id="overalls" src="img/overalls.png">
+                        <h1 class="testo" id="colorsp"></h1>
+
                     </center>
                 </div>
                 <div class="blob">
                     <center class="hash">
                         <h2>Hat and Shirt</h2>
-
                         <button class="button2" type="button" id="chHat" onclick="genDifColorHat()"><span>Change
                                 Mario</span></button>
-                        <img class="mario" id="hat" src="img/logo.png">
+                        <img class="mario testo" id="hat" src="img/logo.png">
+                        <h1 class="testo" id="colorsp2"></h1>
                     </center>
                 </div>
             </div>
@@ -61,7 +61,8 @@
 
                         <button class="button2" type="button" id="chFace" onclick="genDifColorFace()"><span>Change
                                 Mario</span></button>
-                        <img class="mario" id="face" src="img/face.png" style="background-color:pink">
+                        <img class="mario testo" id="face" src="img/face.png" style="background-color:pink">
+                        <h1 class="testo" id="colorsp3"></h1>
                     </center>
                 </div>
                 <div class="blob">
@@ -70,7 +71,8 @@
 
                         <button class="button2" type="button" id="chHair" onclick="genDifColorHair()"><span>Change
                                 Mario</span></button>
-                        <img class="mario" id="hair" src="img/hair.png">
+                        <img class="mario testo" id="hair" src="img/hair.png">
+                        <h1 class="testo" id="colorsp4"></h1>
                     </center>
                 </div>
             </div>
@@ -81,7 +83,8 @@
 
                         <button class="button2" type="button" id="chGloves" onclick="genDifColorGloves()"><span>Change
                                 Mario</span></button>
-                        <img class="mario" id="gloves" src="img/gloves.png">
+                        <img class="mario testo" id="gloves" src="img/gloves.png">
+                        <h1 class="testo" id="colorsp5"></h1>
                     </center>
                 </div>
                 <div class="blob">
@@ -90,13 +93,14 @@
 
                         <button class="button2" type="button" id="chShoes" onclick="genDifColorShoes()"><span>Change
                                 Mario</span></button>
-                        <img class="mario" id="shoes" src="img/shoes.png">
+                        <img class="mario testo" id="shoes" src="img/shoes.png">
+                        <h1 class="testo" id="colorsp6"></h1>
                     </center>
                 </div>
             </div>
 
             <div class="column">
-                <div class="blob" style="height: 770px;">
+                <div class="blob" style="height: 810px;">
                     <h2>Your Code:</h2>
                     <button class="button2" onclick="generateUSA()"><span>Generate (NTSC-U)</span></button>
                     <button class="button2" onclick="generateJAP()"><span>Generate (NTSC-J)</span></button>
