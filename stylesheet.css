@@ -359,12 +359,16 @@ textarea {
 }
 
 
-.testo {
+#colorsp {
     display: block;
     font-size: 1rem;
     font-weight: normal;
     font-family: monospace;
-    background: white;
+    background: whitesmoke;
     padding: 5px;
     text-align: center;
 }
+
+/* #colorsp {
+    background-color: whitesmoke;
+} */

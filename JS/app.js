@@ -4,11 +4,14 @@ const setBg = () => {
     colorsp.innerHTML = "#" + randomColor;
     return '#' + randomColor;
 }
+
+
 function genDifColorOveralls() {
 
     $("#overalls").css("background-color", setBg);
-    //$(".testo").css("background-color", setBg);
+
 }
+
 
 //hat
 const setBg2 = () => {
