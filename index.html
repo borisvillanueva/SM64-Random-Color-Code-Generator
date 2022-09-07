@@ -1,148 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random HV64 Generator</title>
-    <link rel="stylesheet" href="stylesheet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Our local JS, as well as jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random HV64 Generator</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Our local JS, as well as jQuery -->
 
-<body id="body">
-    <div class="header">
-        <h1>
-            <span style="color: red">H</span><span style="color: blue">V</span><span style="color: yellow">6</span><span
-                style="color: green">4</span>
-        </h1>
-        <div class="hv64">
-            <img class="mario" id="hv64" src="img/hv64-real.png">
-        </div>
-        <h6 style="color: red;">
-            Random Color Code Generator
-        </h6>
-        <h6 style="color: yellow;">
-            Yellow Submarine Channel
-        </h6>
-    </div>
+    </head>
 
-    <div class="content">
-        <br>
-        <div class="row">
-            <div class="column">
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Overalls</h2>
-                        <button class=" button2" type="button" id="chOver" onclick="genDifColorOveralls()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo" id="overalls" src="img/overalls.png">
-                        <h1 class="testo" id="colorsp">#000000</h1>
-
-                    </center>
-                </div>
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Hat and Shirt</h2>
-                        <button class="button2" type="button" id="chHat" onclick="genDifColorHat()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo2" id="hat" src="img/logo.png">
-                        <h1 class="testo2" id="colorsp2"></h1>
-                    </center>
-                </div>
+    <body id="body">
+        <div class="header">
+            <h1>
+                <span style="color: red">H</span><span style="color: blue">V</span><span
+                    style="color: yellow">6</span><span style="color: green">4</span>
+            </h1>
+            <div class="hv64">
+                <img class="mario" id="hv64" src="img/hv64-real.png">
             </div>
-            <div class="column">
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Face</h2>
-
-                        <button class="button2" type="button" id="chFace" onclick="genDifColorFace()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo3" id="face" src="img/face.png" style="background-color:pink">
-                        <h1 class="testo3" id="colorsp3"></h1>
-                    </center>
-                </div>
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Hair</h2>
-
-                        <button class="button2" type="button" id="chHair" onclick="genDifColorHair()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo4" id="hair" src="img/hair.png">
-                        <h1 class="testo4" id="colorsp4"></h1>
-                    </center>
-                </div>
-            </div>
-            <div class="column">
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Gloves</h2>
-
-                        <button class="button2" type="button" id="chGloves" onclick="genDifColorGloves()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo5" id="gloves" src="img/gloves.png">
-                        <h1 class="testo5" id="colorsp5"></h1>
-                    </center>
-                </div>
-                <div class="blob">
-                    <center class="hash">
-                        <h2>Shoes</h2>
-
-                        <button class="button2" type="button" id="chShoes" onclick="genDifColorShoes()"><span>Change
-                                Mario</span></button>
-                        <img class="mario testo6" id="shoes" src="img/shoes.png">
-                        <h1 class="testo6" id="colorsp6"></h1>
-                    </center>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="blob" style="height: 810px;">
-                    <h2>Your Code:</h2>
-                    <button class="button2" onclick="generateUSA()"><span>Generate (NTSC-U)</span></button>
-                    <button class="button2" onclick="generateJAP()"><span>Generate (NTSC-J)</span></button>
-                    <button class="button2" onclick="generatePAL()"><span>Generate (PAL)</span></button>
-                    <button class="button2" onclick="generateSHI()"><span>Generate (Shindou)</span></button>
-                    <p id="type">Click one of the buttons above once you've chosen your colours!</p>
-                    <textarea id="code" readonly></textarea>
-                    <button class="button2" onclick="reset()"><span>Reset Mario</span></button>
-                </div>
-            </div>
+            <h6 style="color: red;">
+                Random Color Code Generator
+            </h6>
+            <h6 style="color: yellow;">
+                Yellow Submarine Channel
+            </h6>
         </div>
 
-        <br>
-
-        <div class="row">
-            <div class="blab">
-                <h2>How to use your code:</h2>
-                <p>After you hit the button to generate the code for the version of the game you're running, you'll have
-                    to add the code into your emulator as a new cheat code. In Project64, this can be done through the
-                    top menu bar at System>>Cheats. Click the arrow on the right hand side to open the cheat creation
-                    section. Paste your code into the box labeled "address," and give a name for the code in the "Name"
-                    box. Click on "Add Cheat," and it will appear in the list on the left hand side. Now just check off
-                    the box beside it and Mario will be sporting his new look!</p>
-            </div>
-        </div>
-
-        <br>
-    </div>
-
-    <div class="footer">
-        <span class="footButton" style="font-size:30px;cursor:pointer;left:0;"
-            onclick="location.href = 'https://www.youtube.com/channel/UCAgrnbVMDp3adyeq-VH394g';"><i
-                class="fa fa-home"></i></span>
-        <p>
-            HV64 Random Color Code Generator
+        <div class="content">
             <br>
-            Version 1.1.1 (08/03/22)
+            <div class="row">
+                <div class="column">
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Overalls</h2>
+                            <button class="button2" type="button" id="chOver"><span>Change Mario</span></button>
+                            <img class="mario testo" id="overalls" src="img/overalls.png">
+                            <div>
+                                <h1 class="testo" id="colorsp" style="background-color:white">#000000</h1>
+                            </div>
+
+
+                        </center>
+                    </div>
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Hat and Shirt</h2>
+                            <button class="button2" type="button" id="chHat"><span>Change
+                                    Mario</span></button>
+                            <img class="mario testo" id="hat" src="img/logo.png">
+                            <div>
+                                <h1 class="testo" id="colorsp2" style="background-color:white">#000000</h1>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Face</h2>
+                            <button class="button2" type="button" id="chFace"><span>Change
+                                    Mario</span></button>
+                            <img class="mario testo" id="face" src="img/face.png">
+                            <div>
+                                <h1 class="testo" id="colorsp3" style="background-color:white">#000000</h1>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Hair</h2>
+
+                            <button class="button2" type="button" id="chHair"><span>Change
+                                    Mario</span></button>
+                            <img class="mario testo" id="hair" src="img/hair.png">
+                            <div>
+                                <h1 class="testo" id="colorsp4" style="background-color:white">#000000</h1>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Gloves</h2>
+                            <button class="button2" type="button" id="chGloves"><span>Change
+                                    Mario</span></button>
+                            <img class="mario testo" id="gloves" src="img/gloves.png">
+                            <div>
+                                <h1 class="testo" id="colorsp5" style="background-color:white">#000000</h1>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="blob">
+                        <center class="hash">
+                            <h2>Shoes</h2>
+
+                            <button class="button2" type="button" id="chShoes"><span>Change
+                                    Mario</span></button>
+                            <img class="mario testo" id="shoes" src="img/shoes.png">
+                            <div>
+                                <h1 class="testo" id="colorsp6" style="background-color:white">#000000</h1>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="blob" style="height: 810px;">
+                        <h2>Your Code:</h2>
+                        <button class="button2" onclick="generateUSA()"><span>Generate (NTSC-U)</span></button>
+                        <button class="button2" onclick="generateJAP()"><span>Generate (NTSC-J)</span></button>
+                        <button class="button2" onclick="generatePAL()"><span>Generate (PAL)</span></button>
+                        <button class="button2" onclick="generateSHI()"><span>Generate (Shindou)</span></button>
+                        <p id="type">Click one of the buttons above once you've chosen your colours!</p>
+                        <textarea id="code" readonly></textarea>
+                        <button class="button2" onclick="reset()"><span>Reset Mario</span></button>
+                    </div>
+                </div>
+            </div>
+
             <br>
-            Credit and shout outs to Mind2Digital
-        </p>
-    </div>
-</body>
+
+            <div class="row">
+                <div class="blab">
+                    <h2>How to use your code:</h2>
+                    <p>After you hit the button to generate the code for the version of the game you're running, you'll
+                        have
+                        to add the code into your emulator as a new cheat code. In Project64, this can be done through
+                        the
+                        top menu bar at System>>Cheats. Click the arrow on the right hand side to open the cheat
+                        creation
+                        section. Paste your code into the box labeled "address," and give a name for the code in the
+                        "Name"
+                        box. Click on "Add Cheat," and it will appear in the list on the left hand side. Now just check
+                        off
+                        the box beside it and Mario will be sporting his new look!</p>
+                </div>
+            </div>
+
+            <br>
+        </div>
+
+        <div class="footer">
+            <span class="footButton" style="font-size:30px;cursor:pointer;left:0;"
+                onclick="location.href = 'https://www.youtube.com/channel/UCAgrnbVMDp3adyeq-VH394g';"><i
+                    class="fa fa-home"></i></span>
+            <p>
+                HV64 Random Color Code Generator
+                <br>
+                Version 1.1.1 (08/03/22)
+                <br>
+                Credit and shout outs to Mind2Digital
+            </p>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
 
 </html>
 

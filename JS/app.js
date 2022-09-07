@@ -1,68 +1,91 @@
-//overalls
-const setBg = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp').innerHTML = generatedColor;
+
+    $("#overalls").css("background-color", generatedColor);
+    $("#colorsp").css("background-color", generatedColor);
 }
 
-
-function genDifColorOveralls() {
-
-    $("#overalls").css("background-color", setBg);
-
-}
-
+document.getElementById("chOver")
+    .addEventListener("click", buttonClick);
 
 //hat
-const setBg2 = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp2.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick2() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp2').innerHTML = generatedColor;
+
+    $("#hat").css("background-color", generatedColor);
+    $("#colorsp2").css("background-color", generatedColor);
 }
 
-function genDifColorHat() {
-    $("#hat").css("background-color", setBg2);
-}
+document.getElementById("chHat")
+    .addEventListener("click", buttonClick2);
 
 //face
 
-const setBg3 = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp3.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick3() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp3').innerHTML = generatedColor;
+
+    $("#face").css("background-color", generatedColor);
+    $("#colorsp3").css("background-color", generatedColor);
 }
-function genDifColorFace() {
-    $("#face").css("background-color", setBg3);
-}
+
+document.getElementById("chFace")
+    .addEventListener("click", buttonClick3);
 
 //hair
-const setBg4 = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp4.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick4() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp4').innerHTML = generatedColor;
+
+    $("#hair").css("background-color", generatedColor);
+    $("#colorsp4").css("background-color", generatedColor);
 }
-function genDifColorHair() {
-    $("#hair").css("background-color", setBg4);
-}
+
+document.getElementById("chHair")
+    .addEventListener("click", buttonClick4);
 
 //gloves
-const setBg5 = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp5.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick5() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp5').innerHTML = generatedColor;
+
+    $("#gloves").css("background-color", generatedColor);
+    $("#colorsp5").css("background-color", generatedColor);
 }
 
-function genDifColorGloves() {
-    $("#gloves").css("background-color", setBg5);
-}
+document.getElementById("chGloves")
+    .addEventListener("click", buttonClick5);
 
 //shoes
-const setBg6 = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    colorsp6.innerHTML = "#" + randomColor;
-    return '#' + randomColor;
+function buttonClick6() {
+    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+
+    const generatedColor = '#' + randHex;
+
+    document.getElementById('colorsp6').innerHTML = generatedColor;
+
+    $("#shoes").css("background-color", generatedColor);
+    $("#colorsp6").css("background-color", generatedColor);
 }
-function genDifColorShoes() {
-    $("#shoes").css("background-color", setBg6);
-}
+
+document.getElementById("chShoes")
+    .addEventListener("click", buttonClick6);
+
 

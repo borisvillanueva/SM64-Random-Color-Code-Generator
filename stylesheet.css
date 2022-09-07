@@ -13,12 +13,12 @@ x-model {
 
 @font-face {
     font-family: "mario";
-    src: url("SuperMario256.ttf");
+    src: url("fonts/SuperMario256.ttf");
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("../../../css/Roboto-Regular.ttf");
+    src: url("fonts/Roboto-Regular.ttf");
 }
 
 body {
@@ -359,7 +359,7 @@ textarea {
 }
 
 
-#colorsp {
+.testo {
     display: block;
     font-size: 1rem;
     font-weight: normal;
