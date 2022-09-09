@@ -23,7 +23,7 @@ x-model {
 
 body {
     margin: 0;
-    background-image: url("img/wp3621394.webp");
+    background-image: url("img/super-mario-all-stars-physical-copies-outsold-avengers-in-september-1601290587765.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -377,3 +377,8 @@ span {
 /* #colorsp {
     background-color: whitesmoke;
 } */
+.ChName {
+    font-size: 70px;
+    background-color: black;
+    padding: 20px;
+}
