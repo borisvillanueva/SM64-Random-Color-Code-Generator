@@ -1,91 +1,323 @@
-function buttonClick() {
+function buttonClick(element, img) {
     const randHex = Math.floor(Math.random() * 16777215).toString(16);
 
     const generatedColor = '#' + randHex;
 
-    document.getElementById('colorsp').innerHTML = generatedColor;
+    element.innerHTML = generatedColor;
 
-    $("#overalls").css("background-color", generatedColor);
-    $("#colorsp").css("background-color", generatedColor);
+    $(img).css("background-color", generatedColor);
+    $(element).css("background-color", generatedColor);
 }
 
-document.getElementById("chOver")
-    .addEventListener("click", buttonClick);
+document.querySelectorAll('.button2').forEach((element) => {
+    element
+        .addEventListener("click", (event) => {
+            let children = Array.from(event.target.parentNode.children)
+            let div = ''
+            let img = ''
+            children.forEach((element) => {
+                if (element.classList.contains('color')) {
+                    div = element
+                }
 
-//hat
-function buttonClick2() {
-    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+                if (element.tagName === 'IMG') {
+                    img = element
+                }
+            })
+            console.log(div)
+            console.log(img)
+            let element = div.children[0]
+            console.log(element)
 
-    const generatedColor = '#' + randHex;
+            // console.log(arr2.indexOf(event.target))
 
-    document.getElementById('colorsp2').innerHTML = generatedColor;
+            buttonClick(element, img)
+        });
+})
 
-    $("#hat").css("background-color", generatedColor);
-    $("#colorsp2").css("background-color", generatedColor);
+/*Image color update code*/
+
+function reset() {
+
+    document.getElementById("code").value = "";
+    document.getElementById("type").innerHTML = "Click one of the buttons above once you've chosen your colors!";
 }
 
-document.getElementById("chHat")
-    .addEventListener("click", buttonClick2);
 
-//face
+/*USA Code Generation*/
 
-function buttonClick3() {
-    const randHex = Math.floor(Math.random() * 16777215).toString(16);
+function generatePantsUSA() {
+    var hex = document.getElementById("colorsp").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
 
-    const generatedColor = '#' + randHex;
-
-    document.getElementById('colorsp3').innerHTML = generatedColor;
-
-    $("#face").css("background-color", generatedColor);
-    $("#colorsp3").css("background-color", generatedColor);
+    var code = "8107EC20 " + r + g + "\r\n8107EC22 " + b + "00\r\n8107EC24 " + r + g + "\r\n8107EC26 " + b + "00\r\n8107EC28 " + r + g + "\r\n8107EC2A " + b + "00\r\n8107EC2C " + r + g + "\r\n8107EC2E " + b + "00";
+    return code;
 }
 
-document.getElementById("chFace")
-    .addEventListener("click", buttonClick3);
+function generateCapUSA() {
+    var hex = document.getElementById("colorsp2").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
 
-//hair
-function buttonClick4() {
-    const randHex = Math.floor(Math.random() * 16777215).toString(16);
-
-    const generatedColor = '#' + randHex;
-
-    document.getElementById('colorsp4').innerHTML = generatedColor;
-
-    $("#hair").css("background-color", generatedColor);
-    $("#colorsp4").css("background-color", generatedColor);
+    var code = "8107EC38 " + r + g + "\r\n8107EC3A " + b + "00\r\n8107EC3C " + r + g + "\r\n8107EC3E " + b + "00\r\n8107EC40 " + r + g + "\r\n8107EC42 " + b + "00\r\n8107EC44 " + r + g + "\r\n8107EC46 " + b + "00";
+    return code;
 }
 
-document.getElementById("chHair")
-    .addEventListener("click", buttonClick4);
+function generateGlovesUSA() {
+    var hex = document.getElementById("colorsp5").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
 
-//gloves
-function buttonClick5() {
-    const randHex = Math.floor(Math.random() * 16777215).toString(16);
-
-    const generatedColor = '#' + randHex;
-
-    document.getElementById('colorsp5').innerHTML = generatedColor;
-
-    $("#gloves").css("background-color", generatedColor);
-    $("#colorsp5").css("background-color", generatedColor);
+    var code = "8107EC50 " + r + g + "\r\n8107EC52 " + b + "00\r\n8107EC54 " + r + g + "\r\n8107EC56 " + b + "00\r\n8107EC58 " + r + g + "\r\n8107EC5A " + b + "00\r\n8107EC5C " + r + g + "\r\n8107EC5E " + b + "00";
+    return code;
 }
 
-document.getElementById("chGloves")
-    .addEventListener("click", buttonClick5);
+function generateShoesUSA() {
+    var hex = document.getElementById("colorsp6").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
 
-//shoes
-function buttonClick6() {
-    const randHex = Math.floor(Math.random() * 16777215).toString(16);
-
-    const generatedColor = '#' + randHex;
-
-    document.getElementById('colorsp6').innerHTML = generatedColor;
-
-    $("#shoes").css("background-color", generatedColor);
-    $("#colorsp6").css("background-color", generatedColor);
+    var code = "8107EC68 " + r + g + "\r\n8107EC6A " + b + "00\r\n8107EC6C " + r + g + "\r\n8107EC6E " + b + "00\r\n8107EC70 " + r + g + "\r\n8107EC72 " + b + "00\r\n8107EC74 " + r + g + "\r\n8107EC76 " + b + "00";
+    return code;
 }
 
-document.getElementById("chShoes")
-    .addEventListener("click", buttonClick6);
+function generateFaceUSA() {
+    var hex = document.getElementById("colorsp3").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107EC80 " + r + g + "\r\n8107EC82 " + b + "00\r\n8107EC84 " + r + g + "\r\n8107EC86 " + b + "00\r\n8107EC88 " + r + g + "\r\n8107EC8A " + b + "00\r\n8107EC8C " + r + g + "\r\n8107EC8E " + b + "00";
+    return code;
+}
+
+function generateHairUSA() {
+    var hex = document.getElementById("colorsp4").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107EC98 " + r + g + "\r\n8107EC9A " + b + "00\r\n8107EC9C " + r + g + "\r\n8107EC9E " + b + "00\r\n8107ECA0 " + r + g + "\r\n8107ECA2 " + b + "00\r\n8107ECA4 " + r + g + "\r\n8107ECA6 " + b + "00";
+    return code;
+}
+
+function generateUSA() {
+    document.getElementById("code").value = "";
+    // alert("hi z");
+    document.getElementById("code").value = generatePantsUSA() + "\r\n" + generateCapUSA() + "\r\n" + generateGlovesUSA() + "\r\n" + generateShoesUSA() + "\r\n" + generateFaceUSA() + "\r\n" + generateHairUSA();
+    document.getElementById("type").innerHTML = "This code is for the <b>NTSC-U (American)</b> version.";
+}
+
+// /*PAL Code Generation*/
+
+function generatePantsPAL() {
+    var hex = document.getElementById("colorsp").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "810742E0 " + r + g + "\r\n810742E2 " + b + "00\r\n810742E4 " + r + g + "\r\n810742E6 " + b + "00\r\n810742E8 " + r + g + "\r\n810742EA " + b + "00\r\n810742EC " + r + g + "\r\n810742EE " + b + "00";
+    return code;
+}
+
+function generateCapPAL() {
+    var hex = document.getElementById("colorsp2").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "810742F8 " + r + g + "\r\n810742FA " + b + "00\r\n810742FC " + r + g + "\r\n810742FE " + b + "00\r\n81074300 " + r + g + "\r\n81074302 " + b + "00\r\n81074304 " + r + g + "\r\n81074306 " + b + "00";
+    return code;
+}
+
+function generateGlovesPAL() {
+    var hex = document.getElementById("colorsp5").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "81074310 " + r + g + "\r\n81074312 " + b + "00\r\n81074314 " + r + g + "\r\n81074316 " + b + "00\r\n81074318 " + r + g + "\r\n8107431A " + b + "00\r\n8107431C " + r + g + "\r\n8107431E " + b + "00";
+    return code;
+}
+
+function generateShoesPAL() {
+    var hex = document.getElementById("colorsp6").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "81074328 " + r + g + "\r\n8107432A " + b + "00\r\n8107432C " + r + g + "\r\n8107432E " + b + "00\r\n81074330 " + r + g + "\r\n81074332 " + b + "00\r\n81074334 " + r + g + "\r\n81074336 " + b + "00";
+    return code;
+}
+
+function generateFacePAL() {
+    var hex = document.getElementById("colorsp3").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "81074340 " + r + g + "\r\n81074342 " + b + "00\r\n81074344 " + r + g + "\r\n81074346 " + b + "00\r\n81074348 " + r + g + "\r\n8107434A " + b + "00\r\n8107434C " + r + g + "\r\n8107434E " + b + "00";
+    return code;
+}
+
+function generateHairPAL() {
+    var hex = document.getElementById("colorsp4").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "81074358 " + r + g + "\r\n8107435A " + b + "00\r\n8107435C " + r + g + "\r\n8107435E " + b + "00\r\n81074360 " + r + g + "\r\n81074362 " + b + "00\r\n81074364 " + r + g + "\r\n81074366 " + b + "00";
+    return code;
+}
+
+function generatePAL() {
+    document.getElementById("code").value = "";
+    // alert("hi z");
+    document.getElementById("code").value = generatePantsPAL() + "\r\n" + generateCapPAL() + "\r\n" + generateGlovesPAL() + "\r\n" + generateShoesPAL() + "\r\n" + generateFacePAL() + "\r\n" + generateHairPAL();
+    document.getElementById("type").innerHTML = "This code is for the <b>PAL (European)</b> version.";
+}
 
 
+/*Japan Code Generation*/
+
+function generatePantsJAP() {
+    var hex = document.getElementById("colorsp").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDC0 " + r + g + "\r\n8107BDC2 " + b + "00\r\n8107BDC4 " + r + g + "\r\n8107BDC6 " + b + "00\r\n8107BDC8 " + r + g + "\r\n8107BDCA " + b + "00\r\n8107BDCC " + r + g + "\r\n8107BDCE " + b + "00";
+    return code;
+}
+
+function generateCapJAP() {
+    var hex = document.getElementById("colorsp2").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDD8 " + r + g + "\r\n8107BDDA " + b + "00\r\n8107BDDC " + r + g + "\r\n8107BDDE " + b + "00\r\n8107BDE0 " + r + g + "\r\n8107BDE2 " + b + "00\r\n8107BDE4 " + r + g + "\r\n8107BDE6 " + b + "00";
+    return code;
+}
+
+function generateGlovesJAP() {
+    var hex = document.getElementById("colorsp5").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDF0 " + r + g + "\r\n8107BDF2 " + b + "00\r\n8107BDF4 " + r + g + "\r\n8107BDF6 " + b + "00\r\n8107BDF8 " + r + g + "\r\n8107BDFA " + b + "00\r\n8107BDFC " + r + g + "\r\n8107BDFE " + b + "00";
+    return code;
+}
+
+function generateShoesJAP() {
+    var hex = document.getElementById("colorsp6").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE08 " + r + g + "\r\n8107BE0A " + b + "00\r\n8107BE0C " + r + g + "\r\n8107BE0E " + b + "00\r\n8107BE10 " + r + g + "\r\n8107BE12 " + b + "00\r\n8107BE14 " + r + g + "\r\n8107BE16 " + b + "00";
+    return code;
+}
+
+function generateFaceJAP() {
+    var hex = document.getElementById("colorsp3").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE20 " + r + g + "\r\n8107BE22 " + b + "00\r\n8107BE24 " + r + g + "\r\n8107BE26 " + b + "00\r\n8107BE28 " + r + g + "\r\n8107BE2A " + b + "00\r\n8107BE2C " + r + g + "\r\n8107BE2E " + b + "00";
+    return code;
+}
+
+function generateHairJAP() {
+    var hex = document.getElementById("colorsp4").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE38 " + r + g + "\r\n8107BE3A " + b + "00\r\n8107BE3C " + r + g + "\r\n8107BE3E " + b + "00\r\n8107BE40 " + r + g + "\r\n8107BE42 " + b + "00\r\n8107BE44 " + r + g + "\r\n8107BE46 " + b + "00";
+    return code;
+}
+
+function generateJAP() {
+    document.getElementById("code").value = "";
+    // alert("hi z");
+    document.getElementById("code").value = generatePantsJAP() + "\r\n" + generateCapJAP() + "\r\n" + generateGlovesJAP() + "\r\n" + generateShoesJAP() + "\r\n" + generateFaceJAP() + "\r\n" + generateHairJAP();
+    document.getElementById("type").innerHTML = "This code is for the <b>NTSC-J (Japanese)</b> version.";
+}
+
+
+/*Shindou Code Generation*/
+
+function generatePantsSHI() {
+    var hex = document.getElementById("colorsp").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDC0 " + r + g + "\r\n8107BDC2 " + b + "00\r\n8107BDC4 " + r + g + "\r\n8107BDC6 " + b + "00\r\n8107BDC8 " + r + g + "\r\n8107BDCA " + b + "00\r\n8107BDCC " + r + g + "\r\n8107BDCE " + b + "00";
+    return code;
+}
+
+function generateCapSHI() {
+    var hex = document.getElementById("colorsp2").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDD8 " + r + g + "\r\n8107BDDA " + b + "00\r\n8107BDDC " + r + g + "\r\n8107BDDE " + b + "00\r\n8107BDE0 " + r + g + "\r\n8107BDE2 " + b + "00\r\n8107BDE4 " + r + g + "\r\n8107BDE6 " + b + "00";
+    return code;
+}
+
+function generateGlovesSHI() {
+    var hex = document.getElementById("colorsp5").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BDF0 " + r + g + "\r\n8107BDF2 " + b + "00\r\n8107BDF4 " + r + g + "\r\n8107BDF6 " + b + "00\r\n8107BDF8 " + r + g + "\r\n8107BDFA " + b + "00\r\n8107BDFC " + r + g + "\r\n8107BDFE " + b + "00";
+    return code;
+}
+
+function generateShoesSHI() {
+    var hex = document.getElementById("colorsp6").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE08 " + r + g + "\r\n8107BE0A " + b + "00\r\n8107BE0C " + r + g + "\r\n8107BE0E " + b + "00\r\n8107BE10 " + r + g + "\r\n8107BE12 " + b + "00\r\n8107BE14 " + r + g + "\r\n8107BE16 " + b + "00";
+    return code;
+}
+
+function generateFaceSHI() {
+    var hex = document.getElementById("colorsp3").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE20 " + r + g + "\r\n8107BE22 " + b + "00\r\n8107BE24 " + r + g + "\r\n8107BE26 " + b + "00\r\n8107BE28 " + r + g + "\r\n8107BE2A " + b + "00\r\n8107BE2C " + r + g + "\r\n8107BE2E " + b + "00";
+    return code;
+}
+
+function generateHairSHI() {
+    var hex = document.getElementById("colorsp4").innerHTML;
+    var r = hex.substr(1, 2).toUpperCase();
+    var g = hex.substr(3, 2).toUpperCase();
+    var b = hex.substr(5, 2).toUpperCase();
+
+    var code = "8107BE38 " + r + g + "\r\n8107BE3A " + b + "00\r\n8107BE3C " + r + g + "\r\n8107BE3E " + b + "00\r\n8107BE40 " + r + g + "\r\n8107BE42 " + b + "00\r\n8107BE44 " + r + g + "\r\n8107BE46 " + b + "00";
+    return code;
+}
+
+function generateSHI() {
+    document.getElementById("code").value = "";
+    // alert("hi z");
+    document.getElementById("code").value = generatePantsSHI() + "\r\n" + generateCapSHI() + "\r\n" + generateGlovesSHI() + "\r\n" + generateShoesSHI() + "\r\n" + generateFaceSHI() + "\r\n" + generateHairSHI();
+    document.getElementById("type").innerHTML = "This code is for the <b>Japanese Shindou</b> version.";
+}

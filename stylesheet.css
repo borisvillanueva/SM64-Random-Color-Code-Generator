@@ -125,7 +125,7 @@ textarea {
     padding: 10px;
     margin: 10px;
     width: 100%;
-    height: 170px;
+    height: 200px;
     font-family: "Roboto";
     text-shadow: none;
     text-align: center;
@@ -348,10 +348,11 @@ textarea {
 }
 
 .hv64 {
-    width: 10%;
+    width: 30%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 #hair {
@@ -367,6 +368,10 @@ textarea {
     background: whitesmoke;
     padding: 5px;
     text-align: center;
+}
+
+span {
+    pointer-events: none;
 }
 
 /* #colorsp {
