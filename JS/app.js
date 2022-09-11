@@ -321,3 +321,13 @@ function generateSHI() {
     document.getElementById("code").value = generatePantsSHI() + "\r\n" + generateCapSHI() + "\r\n" + generateGlovesSHI() + "\r\n" + generateShoesSHI() + "\r\n" + generateFaceSHI() + "\r\n" + generateHairSHI();
     document.getElementById("type").innerHTML = "This code is for the <b>Japanese Shindou</b> version.";
 }
+function copyText() {
+
+    /* Copy text into clipboard */
+    var text = document.querySelector("#code");
+    var range = document.createRange();
+
+    range.selectNode(text);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+}
